@@ -1,0 +1,2 @@
+d18ad8ccdd10699748a7e4ff3bd634e91120104cff588070c3d494f873a811d4  codex-video-starter-v1.0.0.zip
+51a228fa38dfddb37eb2d636bafab28da96bafd61310cc13275b5472a8f91c18  codex-video-starter-sample.mp4
