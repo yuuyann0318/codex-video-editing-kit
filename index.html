@@ -1,13 +1,147 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>ChatGPT×動画編集キット</title><meta name="description" content="見本MP4を作り、字幕を1か所直し、自分の素材へ置き換える動画編集キットです。"><style>
-.prompt{overflow-wrap:anywhere;word-break:break-word}
-.section:has(#own){display:flex;flex-direction:column}.section:has(#own)>h2{order:0}.section:has(#own)>p:not(.note):not(.copy-help){order:1}.section:has(#own)>button[data-copy="own"]{order:2}.section:has(#own)>.copy-status{order:3}.section:has(#own)>.copy-help{order:4}.section:has(#own)>img{order:5}.section:has(#own)>.note{order:6}.section:has(#own)>.folders{order:7}.section:has(#own)>.prompt-details{order:8}
-.prompt-details{margin-top:8px}.prompt-details summary{cursor:pointer;font-weight:900;padding:12px 0}.copy-status{display:block;min-height:1.8em;font-weight:800}.copy-help{font-size:14px;margin:.2em 0 0}.verify-info code{display:block;overflow-wrap:anywhere;background:#eef4f5;padding:10px;border-radius:8px;margin:8px 0}@media print{.prompt-details>summary{display:none}.copy-status,.copy-help{display:none!important}.section{break-inside:auto!important}.prompt{font-size:10.5pt;line-height:1.55}h2,h3{break-after:avoid}.roles,.folders,.before-after,.env,.verify-info{break-inside:avoid!important}p,li{orphans:3;widows:3}}
-:root{--ink:#eef8fb;--navy:#071a33;--panel:#102a47;--cyan:#13b9d6;--paper:#f4f6f5;--dark:#18222c;--line:#bdd1d7;--orange:#db7b38}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--dark);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.8}a{color:#00677a}.wrap{width:min(100% - 32px,1100px);margin:auto}.hero{background:var(--navy);color:var(--ink);padding:44px 0 54px}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.1;margin:.2em 0}.eyebrow{color:var(--cyan);font-weight:900;letter-spacing:.08em}.hero video{width:100%;aspect-ratio:9/16;max-height:580px;background:#000;border:1px solid #2e7590;border-radius:18px}.hero .sample{display:flex;justify-content:center}.hero p{font-size:clamp(17px,2vw,21px)}.section{margin:28px 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(20px,4vw,40px)}h2{font-size:clamp(27px,4vw,42px);line-height:1.25;margin-top:0}h3{font-size:22px;margin-top:30px}.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.role{background:#e7f3f5;border-top:7px solid var(--cyan);border-radius:12px;padding:18px}.role:last-child{border-color:var(--orange);background:#f5e9df}.role h3{margin-top:0}.split,.folders,.before-after,.env{display:grid;grid-template-columns:1fr 1fr;gap:16px}.split article,.env article{padding:18px;border-radius:12px;background:#e5f3f4;border-left:7px solid var(--cyan)}.split article:last-child,.env article:last-child{background:#f4e7dc;border-color:var(--orange)}.cover{display:block;width:100%;border-radius:15px}.steps{counter-reset:s}.steps li{list-style:none;position:relative;padding:0 0 24px 50px}.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--cyan);color:#052033;font-weight:900}.prompt{white-space:pre-wrap;background:var(--navy);color:var(--ink);border-radius:14px;padding:20px;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}.copy,.download{display:inline-flex;align-items:center;justify-content:center;min-height:50px;border:0;border-radius:10px;background:#087a91;color:white;text-decoration:none;font-weight:900;padding:10px 18px;margin:8px 8px 8px 0;cursor:pointer}.download.alt{background:var(--orange)}.folder{border:2px solid #087a91;border-radius:14px;padding:18px;background:#e7f3f5}.folder.output{border-style:dashed;background:#fff}.folder ul{padding-left:1.2em}.before,.after{padding:20px;border-radius:14px}.before{background:#f4e2df;border-left:8px solid #9a3f38}.after{background:#e3f1ed;border-left:8px solid #087a91}.notice{background:#fff3d8;border-left:8px solid var(--orange);padding:18px;border-radius:10px}.checks li{margin:.6em 0}.note{font-size:14px;color:#52606a}.footer{padding:24px 0 60px}@media(max-width:820px){.roles{grid-template-columns:1fr 1fr}}@media(max-width:680px){.wrap{width:min(100% - 24px,1100px)}.hero{padding-top:26px}.hero-grid,.roles,.split,.folders,.before-after,.env{grid-template-columns:1fr}.hero-grid .sample{order:-1}.hero video{max-height:500px}.section{border-radius:15px}.copy,.download{width:100%;margin-right:0}}@media print{.hero{background:white;color:#000}.hero video,.copy{display:none}.section{break-inside:avoid}.download{background:none;color:#000;border:1px solid #000}}
-</style></head><body><header class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">ChatGPT×動画編集キット</p><h1>完成を見てから、<br>作り始める。</h1><p>見本を1本作り、実在する字幕を1か所直し、自分の台本と音声へ置き換えます。内容、権利、音、最後の見え方は人が確認します。</p></div><div class="sample"><video controls preload="metadata" poster="assets/display/codex-video-starter-sample-poster.jpg"><source src="assets/codex-video-starter-sample.mp4" type="video/mp4">動画を再生できない場合はMP4を保存してください。</video></div></div></header><main class="wrap">
-<section class="section"><h2>まず、この実物を最後まで見てください。</h2><p>上の見本は、同梱している練習音声と画像から実際に書き出したMP4です。字幕、画像、音声の順番まで再生できます。素材の出典と再利用条件はキット内の <code>sample/THIRD_PARTY_NOTICES.md</code> に記録しています。</p><a class="download" href="assets/codex-video-starter-sample.mp4" download>完成見本MP4を保存</a><p>この特典では、同梱素材の見本を1本作ったあと、字幕を1か所直します。その次に、自分の素材から2本目を作ります。</p></section>
-<section class="section"><h2>4つの役割を分けると、迷いません。</h2><div class="roles"><article class="role"><h3>あなたの素材</h3><p>台本、音声、背景動画、使ってよい画像</p></article><article class="role"><h3>ChatGPT</h3><p>台本や見出しの案。内容は人が直す</p></article><article class="role"><h3>Codex＋キット</h3><p>文字起こし、時刻付き字幕、定型編集、MP4化</p></article><article class="role"><h3>人</h3><p>事実、権利、音、字幕、公開を最終確認</p></article></div><div class="split"><article><h3>キットが進める</h3><p>素材がそろった後の文字起こし、時刻付き字幕、定型のカット・画像配置・ズーム、MP4書き出し。</p></article><article><h3>人が決める</h3><p>素材の準備、内容、権利、音、最終確認、投稿、公開、納品。受注や契約も自動ではありません。</p></article></div></section>
-<section class="section"><h2>対応環境を先に確認します。</h2><div class="env"><article><h3>実機確認済み</h3><p>Apple Silicon搭載Mac。導入、2モードの見本、自動文字起こし、字幕修正、再書き出しまで確認しています。</p></article><article><h3>実機未確認</h3><p>Windows、Linux、Intel Mac。動くと決めつけて進めません。</p></article></div><ol class="steps"><li>画面左上のAppleメニュー  を開く</li><li>「このMacについて」を選ぶ</li><li>「チップ」にチップ名があればApple Silicon。「プロセッサ」にIntelなら、この特典では未検証</li></ol><h3>ZIPや素材の場所はFinderでコピー</h3><p>対象を右クリックし、Optionキーを押したまま「“名前”のパス名をコピー」を選びます。コピーした文字をCodexへの全文の該当欄へ貼ります。Terminalを開く必要はありません。</p><div class="notice"><b>情報の扱い</b><br>キットの音声認識と動画書き出しはMac内で行います。一方、Codexへ送る指示や読ませる情報は、利用中のAIサービスの条件に従います。「素材が絶対に外へ出ない」という保証ではありません。最初は同梱練習素材を使ってください。</div></section>
-<section class="section"><h2>配布ファイルを確認して、導入します。</h2><img class="cover" src="assets/display/05-chatgpt-video-editing-kit-v7.jpg" alt="ChatGPTと動画編集キットの制作室"><p class="note">表紙画像はイメージです</p><p>目的は、配布元と同じZIPかをCodexに確認してもらい、安全に導入することです。ZIPの場所だけ置き換えて送ります。</p><button class="copy" data-copy="install">導入文をコピー</button><span class="copy-status" role="status"></span><p class="copy-help">コピーできない時は、下の全文を開いて長押しします。</p><details class="prompt-details"><summary>導入文の全文を見る・ZIPの場所を差し替える</summary><div class="prompt" id="install">この配布ZIPを、Codex動画編集スターターとして導入してください。
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ChatGPT×動画編集キット</title><style>
+:root{--ink:#17202a;--muted:#52606d;--paper:#fff;--soft:#f3f5f6;--a:#315e52;--b:#b85b3d;--line:#b8c4ca}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;font-size:18px;line-height:1.8}a{color:var(--a);text-underline-offset:3px}button,.btn,summary{min-height:48px;font:inherit}.pdf-only{display:none}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}.hero{padding:72px 0 52px;background:var(--soft);border-bottom:5px solid var(--a)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}.eyebrow{font-weight:800;color:var(--a);letter-spacing:.08em}.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.13;margin:.15em 0;overflow-wrap:normal;word-break:keep-all}.hero img{width:100%;display:block;border-radius:6px;aspect-ratio:4/3;object-fit:cover}.notice,figcaption{font-size:14px;color:var(--muted);margin-top:8px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.btn,button.primary{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;background:var(--a);color:#fff;padding:11px 22px;font-weight:800;text-decoration:none;cursor:pointer}.btn.alt{background:var(--b)}.btn.secondary{background:transparent;color:var(--a);border:1px solid var(--a);font-weight:700}main{padding:28px 0 80px}section.content{padding:34px 0;border-bottom:1px solid #d9dfe3}h2{font-size:clamp(28px,4vw,42px);line-height:1.35;margin:1.4em 0 .55em;border-left:7px solid var(--a);padding-left:16px}h3{font-size:clamp(22px,3vw,30px);line-height:1.45;margin:1.5em 0 .45em}h4{font-size:20px}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:28px 0}.flow div{background:var(--soft);padding:16px 12px;border-top:4px solid var(--a);font-weight:700}.flow b{display:block;color:var(--a);font-size:14px}.tablewrap{overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:600px}th,td{border:1px solid #bbc5cc;padding:12px;text-align:left;vertical-align:top}th{background:var(--ink);color:#fff}.codebox{position:relative;margin:22px 0}.copy{position:absolute;right:8px;top:8px;border:1px solid #ccd3d7;background:#fff;border-radius:4px;padding:5px 12px;z-index:2}pre{overflow:auto;background:#111b24;color:#f5f7f8;padding:58px 20px 20px;border-radius:5px;font-size:15px;line-height:1.6;white-space:pre-wrap}code{overflow-wrap:anywhere}details{border:1px solid #bcc6cc;padding:14px 18px;margin:20px 0}summary{font-weight:800;cursor:pointer;padding:8px 0}.appendix{background:#f7f8f8}video{width:100%;display:block;background:#111;max-height:620px}.video-stage{background:#111;padding:12px;margin:24px 0}.quiz{max-width:780px;margin:30px auto}.progress{height:8px;background:#dce2e5}.progress i{display:block;height:100%;background:var(--a)}.choice{display:block;width:100%;text-align:left;border:2px solid #c7d0d5;background:#fff;border-radius:4px;padding:14px 16px;margin:10px 0}.choice[aria-pressed=true]{border-color:var(--a);background:#eaf5f4}.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.error{color:#a32828;font-weight:700}.result{background:var(--soft);padding:24px;border-top:6px solid var(--a);margin:24px 0}.result img{width:100%;max-height:400px;object-fit:cover}.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{border:1px solid #9eadb5;padding:6px 11px;border-radius:999px;font-size:15px}
+.cover-outcomes{display:none}.visual{margin:30px 0;padding:22px;background:#fff;border:1px solid var(--line);border-top:5px solid var(--a);border-radius:4px}.visual b,.visual strong{display:block}.visual i{font-style:normal;color:var(--b);font-weight:900;text-align:center}.visual small{color:var(--muted)}.track-row{display:flex;align-items:stretch;gap:16px;overflow-x:auto;padding:4px;counter-reset:steps}.track .node{position:relative;min-width:150px;flex:1;padding:16px 12px;background:var(--soft);border-bottom:3px solid var(--a);font-weight:700;text-align:center;line-height:1.45;counter-increment:steps;word-break:keep-all}.track .node::before{content:counter(steps);display:block;color:var(--a);font-size:14px}.track .node:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--b);font-size:22px;z-index:2}.commerce-map{display:grid;gap:14px}.commerce-phase{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:stretch}.commerce-phase>b{display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;padding:14px;text-align:center;word-break:keep-all}.commerce-phase>div{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.commerce-phase .node{position:relative;background:var(--soft);border-bottom:3px solid var(--a);padding:14px 8px;text-align:center;font-weight:700;word-break:keep-all}.commerce-phase .node:not(:last-child)::after{content:'→';position:absolute;right:-15px;color:var(--b);top:40%;font-size:22px}.visual-scene{position:relative}.visual-scene>img{width:100%;max-height:560px;object-fit:cover;border-radius:2px}.overlay-flow{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--ink);color:#fff;padding:14px;margin-top:-4px}.overlay-flow span{color:var(--b);font-size:24px}.deliverables{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}.deliverables span{padding:10px;background:var(--soft);text-align:center;font-weight:700}.matrix-head,.matrix-row{display:grid;grid-template-columns:1fr 1.25fr 1.4fr 1.2fr;gap:1px;background:var(--line)}.matrix-head>*{background:var(--ink);color:#fff;padding:10px}.matrix-row>*{background:#fff;padding:11px}.matrix-row:nth-child(odd)>*{background:var(--soft)}.visual-pair{display:grid;grid-template-columns:1fr 40px 1fr;gap:14px;align-items:center}.visual-pair>div{min-width:0}.visual-pair>div:nth-of-type(3){grid-column:1/-1}.visual-pair img{width:100%;max-height:320px;object-fit:cover}.meeting-before-after{display:grid!important;grid-template-columns:1fr 40px 1fr;gap:14px;align-items:center}.meeting-before-after section{background:var(--soft);padding:16px}.meeting-before-after dl{display:grid;grid-template-columns:auto 1fr;margin:8px 0}.meeting-before-after dt{font-weight:800;color:var(--a)}.meeting-before-after dd{margin:0 0 4px 10px}.before-after,.edit-lane,.data-use,.column-map,.folder-map{display:flex;gap:18px;align-items:center}.before-after>div,.edit-lane>div,.data-use>div,.column-map>div,.folder-map>div{flex:1;background:var(--soft);padding:18px}.before-after span,.edit-lane span,.column-map span,.data-use span{display:block;padding:5px 0}.compare,.output-files,.environment{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.compare>div,.output-files>div,.environment>div{padding:20px;background:var(--soft);border-left:5px solid var(--a)}.compare strong,.output-files b,.environment strong{font-size:22px;margin:8px 0}.actual-compare>div{display:grid;gap:10px}.paper{background:#fff;border:1px solid var(--line);padding:14px}.paper span{display:block;border-bottom:1px solid var(--line);padding:4px}.final-paper{border-left:5px solid var(--a)}.file-flow{display:grid;grid-template-columns:1.1fr .7fr 1.5fr .25fr .8fr;gap:14px;align-items:center}.file-group,.split-output,.human-check{background:var(--soft);padding:18px}.file-group code,.file-group small,.split-output span,.split-output code,.human-check span{display:block;margin:6px 0}.split-output span{border-bottom:1px solid var(--line);padding:6px 0}.output-files{grid-template-columns:repeat(3,1fr)}.output-files code{font-size:13px;display:block;overflow-wrap:anywhere}.mini-table{display:grid;gap:5px}.mini-table span{background:#fff;border:1px solid var(--line);padding:6px}.ui-guide>div{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.ui-guide span{background:var(--soft);padding:14px;text-align:center}.truth-compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.truth-compare>div{padding:20px}.truth-compare .bad{background:#fbeeee;border-left:5px solid #a33}.truth-compare .good{background:#eaf5f1;border-left:5px solid var(--a)}.truth-compare p{grid-column:1/-1;background:var(--soft);padding:12px}.meeting-map{display:grid;grid-template-columns:auto auto repeat(4,1fr) auto 1.4fr;align-items:center;gap:8px;margin-top:12px}.meeting-map>*{background:var(--soft);padding:10px;text-align:center}.role-map{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center}.role-map>div{background:var(--soft);padding:18px}.role-map span{display:block;padding:4px}.role-map>i,.role-map>strong,.role-map>em{grid-column:1/-1}.role-map>strong{font-size:26px}.role-map>em{font-style:normal;color:var(--a);font-weight:800}.environment{grid-template-columns:repeat(3,1fr)}.environment span{display:block}.environment .ok{background:#eaf5f1}.install-flow{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr;gap:10px;align-items:center}.install-flow>div{background:var(--soft);padding:16px}.install-flow .branch{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#fff}.install-flow .branch span{padding:14px;border:1px solid var(--line)}.actual-assets{display:grid;grid-template-columns:1.5fr 40px 1fr;align-items:center;gap:14px}.actual-assets>div:first-child{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.actual-assets img{width:100%;aspect-ratio:9/16;object-fit:cover}.actual-assets b{grid-column:1/-1}.subtitle-compare{display:grid;grid-template-columns:1fr 40px 1fr;gap:14px;align-items:center}.subtitle-compare>div{background:var(--ink);color:#fff;padding:16px;text-align:center}.subtitle-compare img{width:100%;max-height:480px;object-fit:cover;object-position:center 80%}.subtitle-compare strong{font-size:18px}.subtitle-compare ul{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;list-style:none;padding:0}.subtitle-compare li{background:var(--soft);padding:10px;text-align:center;font-weight:700}.folder-map code{display:block;background:#fff;border:1px solid var(--line);padding:6px;margin:5px 0}.completion-card .completion-info{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.completion-info b{grid-column:1/-1;font-size:28px}.completion-info span{background:var(--soft);padding:10px}.condition-sheet{text-align:center}.condition-sheet>div{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:12px 0}.condition-sheet span{background:var(--soft);padding:12px 6px;font-weight:700}.condition-sheet>strong{display:inline-block;font-size:22px;border-bottom:4px solid var(--a);padding:8px 18px}
+@media(max-width:760px){body{font-size:18px}.wrap{width:min(100% - 28px,1100px)}.hero{padding:42px 0 34px}.hero-grid{grid-template-columns:1fr;gap:24px}.flow{grid-template-columns:1fr}.actions>.btn{width:100%}h2{padding-left:12px}.quiz{margin-top:16px}.visual{padding:16px;margin:24px 0}.track-row{flex-direction:column;overflow:visible}.track .node{min-width:0}.track .node:not(:last-child)::after{content:'↓';right:auto;top:auto;bottom:-20px;left:50%;transform:translateX(-50%)}.commerce-phase{grid-template-columns:1fr}.commerce-phase>div{grid-template-columns:1fr}.commerce-phase .node:not(:last-child)::after{content:'↓';right:auto;top:auto;bottom:-17px;left:50%}.overlay-flow{align-items:stretch;flex-direction:column}.overlay-flow span{transform:rotate(90deg);line-height:1}.deliverables{grid-template-columns:1fr 1fr}.matrix-head{display:none}.matrix-row{grid-template-columns:1fr 1fr}.matrix-row>*:nth-child(3),.matrix-row>*:nth-child(4){grid-column:span 1}.matrix-row b{grid-column:1/-1;background:var(--ink)!important;color:#fff}.visual-pair{grid-template-columns:1fr}.visual-pair>i{transform:rotate(90deg)}.visual-pair>div:nth-of-type(3){grid-column:auto}.meeting-before-after{grid-template-columns:1fr!important}.before-after,.edit-lane,.data-use,.column-map,.folder-map{flex-direction:column;align-items:stretch}.file-flow{grid-template-columns:1fr}.file-flow>i{transform:none}.compare,.output-files,.environment{grid-template-columns:1fr}.ui-guide>div{grid-template-columns:1fr}.meeting-map{grid-template-columns:1fr 1fr}.meeting-map>*{grid-column:auto}.role-map{grid-template-columns:1fr}.role-map>i,.role-map>strong,.role-map>em{grid-column:1}.install-flow{grid-template-columns:1fr}.install-flow .branch{grid-column:1;grid-template-columns:1fr}.actual-assets{grid-template-columns:1fr}.actual-assets>i{transform:rotate(90deg)}.subtitle-compare{grid-template-columns:1fr}.subtitle-compare ul{grid-column:1;grid-template-columns:1fr}.subtitle-compare>i{transform:rotate(90deg)}.completion-card .completion-info{grid-template-columns:1fr}.condition-sheet>div{grid-template-columns:1fr 1fr}}
+@media print{@page{size:A4;margin:13mm 12mm}body{font-size:12.5pt;line-height:1.52}main{padding:0}.wrap{width:auto}.hero{height:297mm;margin:-13mm -12mm 0;padding:22mm 23mm;display:flex;align-items:stretch;break-after:page}.hero-grid{width:100%;grid-template-columns:1fr;gap:7mm;align-content:center}.hero figure{max-width:none;margin:0}.hero img{aspect-ratio:16/9;max-height:104mm}.hero h1{font-size:31pt}.hero p{font-size:13.5pt}.cover-outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}.cover-outcomes span{background:#fff;border-top:4px solid var(--a);padding:4mm 2mm;text-align:center;font-weight:800}.btn,.copy,.quiz,.no-print,.video-stage{display:none!important}details{border:0;padding:0}details>*{display:block!important}summary{display:none}h2,h3,h4{break-after:avoid}h2{font-size:24pt}h3{font-size:18.5pt}h4{font-size:14.5pt}h2+*,h3+*,h4+*{break-before:avoid}.keep-group{break-inside:avoid}img,video,.flow,.tablewrap,blockquote,pre,.visual{break-inside:avoid}.break-after{break-after:page}section.content{padding:4mm 0}pre{font-size:9pt}.pdf-only{display:block!important}.pdf-complete{break-inside:avoid}.pdf-complete img{width:100%;max-height:145mm;object-fit:contain}.visual{padding:4mm;margin:5mm 0}.visual-scene>img{max-height:100mm}.track-row{gap:2mm}.track .node{min-width:20mm;padding:3mm 1.5mm;font-size:10pt}.track .node:not(:last-child)::after{right:-2.5mm}.commerce-map{gap:4mm}.commerce-phase{grid-template-columns:28mm 1fr;gap:3mm}.commerce-phase>div{gap:4mm}.commerce-phase .node{padding:3mm 1mm;font-size:10pt}.visual figcaption{font-size:9.5pt}.visual-pair img{max-height:48mm}.meeting-before-after section{padding:3mm;font-size:10pt}.overlay-flow{padding:2mm}.condition-sheet span{padding:2mm;font-size:9pt}.completion-card .completion-info{font-size:10pt}.subtitle-compare img{max-height:78mm}}
+
+.three-stage{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:12px;align-items:center}.three-stage>div{min-width:0;background:var(--soft);padding:18px}.three-stage span{display:block;padding:5px 0}.three-stage figcaption{grid-column:1/-1}
+@media(max-width:760px){.three-stage{grid-template-columns:1fr}.three-stage>i{transform:rotate(90deg)}.three-stage figcaption{grid-column:1}}
+@media print{#診断{display:none!important}h2[id^="結果"]{break-before:auto}.three-stage{grid-template-columns:1fr 8mm 1fr 8mm 1fr;gap:2mm}.three-stage>div{padding:3mm;font-size:10pt}.tablewrap{break-inside:auto!important}tr{break-inside:avoid}.file-flow{grid-template-columns:1.1fr .85fr 1.35fr .2fr .8fr}.file-flow>i{word-break:keep-all;font-size:10pt}.meeting-scene>img{max-height:60mm}.data-use,.column-map{flex-direction:row!important;align-items:center!important}.edit-lane{display:grid;grid-template-columns:1fr 7mm 1fr 7mm 1fr 7mm 1fr;gap:2mm;align-items:center}.edit-lane>div{padding:3mm;font-size:10pt;min-width:0}.edit-lane>i{transform:none!important}.edit-lane figcaption{grid-column:1/-1}.actual-assets img{max-height:65mm;aspect-ratio:auto!important;object-fit:cover}pre{font-size:8.8pt;line-height:1.35;padding:4mm}h3[id="Codexへ送る字幕修正文"]{margin-top:3mm}h3[id="Codexへ送る字幕修正文"]+div pre{font-size:8.3pt;line-height:1.25;padding:3mm}h3[id="仕事の準備"]+ul,h3[id="人が行う所"]+ul{break-inside:avoid}h2[id="今日の行動"],h3[id="Codexへ自然な文で頼む"],h3[id="素材を守る"]{break-before:page}h3[id="素材を守る"]~h2[id="今日の行動"]{break-before:auto}details.appendix{font-size:12pt;line-height:1.45}details.appendix p{margin:.65em 0}}
+</style></head><body><header class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">短尺動画編集を仕事にする</p><h1>ChatGPT×<wbr><span style="white-space:nowrap">動画編集キット</span></h1><p>店主の撮影素材を、カット・字幕・音量調整で投稿できるMP4へ仕上げます。</p><div class="actions"><a class="btn" href="assets/codex-video-starter-v1.0.2.zip" download>配布ZIP v1.0.2を保存</a><a class="btn alt" href="assets/動画編集キット導入ガイド_保存版.pdf" download>保存版PDFを保存</a></div></div><figure><img src="assets/display/client-video-workflow-v1.png" alt="カフェ店主と編集者が短い動画の初稿を確認する場面"><figcaption class="notice">画像はイメージです</figcaption></figure><div class="cover-outcomes"><span>完成MP4</span><span>導入と実練習</span><span>応募から納品</span></div></div></header><main class="wrap"><section class="content"><h3 id="店主の撮影素材を-投稿できる動画へ仕上げる">店主の撮影素材を、投稿できる動画へ仕上げる</h3>
+<p>小さなお店の店主が、料理と店内をスマホで撮影しました。</p>
+<p>Instagramのリールへ載せたい。でも、言い直した所を切り、字幕を入れ、音量を整える時間がありません。</p>
+<p>そこで、短尺動画の編集を依頼します。</p>
+<p>編集する人は、台本、撮影済み動画、参考動画、完成後の長さ、投稿先を受け取ります。不要部分を切り、字幕と音量を整えます。スマホなどで再生できるMP4形式の動画ファイルを、最初の確認用の版「初稿」として渡します。</p>
+<p>店主が確認し、合意した範囲を修正します。最後に、Instagramへ投稿できる完成MP4を納品します。</p>
+<p>依頼主がお金を払う対象は、確認を終えた完成動画と、条件に沿って修正・納品する作業です。</p>
+<p>このキットは、文字起こし、時刻つき字幕、定型のカット、画像配置、MP4書き出しを助けます。素材の権利、台本の内容、字幕、音、映像の確認は人が行います。</p>
+<figure class="visual visual-scene"><img src="assets/display/client-video-workflow-v1.png" alt="カフェ店主が撮影素材を渡し、編集者と完成動画を確認する場面"><div class="overlay-flow"><b>撮影素材を受取</b><span>→</span><b>カット・字幕・音</b><span>→</span><b>完成MP4を納品</b></div><figcaption>依頼主の動画を編集し、確認を終えたMP4を渡す仕事です。画像はイメージです</figcaption></figure>
+<h3 id="この仕事で受け取る物-渡す物">この仕事で受け取る物、渡す物</h3>
+<div class="tablewrap"><table><thead><tr><th>受け取る材料</th><th>編集する内容</th><th>納品する物</th></tr></thead><tbody>
+<tr><td>台本、撮影素材、参考動画</td><td>不要部分のカット</td><td>指定形式のMP4動画</td></tr>
+<tr><td>完成後の長さ、縦横、投稿先</td><td>字幕、音量の調整</td><td>確認事項</td></tr>
+<tr><td>ロゴ、画像、BGMの条件</td><td>画像・BGMの配置</td><td>必要に応じて修正一覧</td></tr>
+</tbody></table></div>
+<p>仕事によって、カットだけ、字幕だけ、フル編集など範囲が違います。応募前に、どこまで含むかを募集文から読み取ります。</p>
+<figure class="visual edit-lane"><div><b>材料</b><span>台本</span><span>撮影素材</span><span>参考動画</span></div><i>→</i><div><b>編集</b><span>カット</span><span>字幕</span><span>音量</span></div><i>→</i><div><b>初稿MP4</b><span>依頼主が確認</span></div><i>→</i><div class="final"><b>修正版MP4</b><span>指定形式で納品</span></div><figcaption>完成動画だけでなく、条件に沿って修正・納品する作業も対価の対象です。</figcaption></figure>
+<h3 id="自分の動画を作る時と-受託の違い">自分の動画を作る時と、受託の違い</h3>
+<p>自分のSNS動画なら、尺や修正回数を自分で決められます。</p>
+<p>依頼主の動画を編集する時は、完成後の長さ、画面の向き、字幕、BGM、初稿期限、修正回数、納品形式、素材の扱いを先に合意します。</p>
+<p>「動画が書き出せた」だけでは納品できません。</p>
+<p>依頼条件に合い、最初から最後まで再生し、依頼主が確認できるファイルへする所までが仕事です。</p>
+<h3 id="依頼から報酬まで">依頼から報酬まで</h3>
+<p>クラウドワークスの固定報酬制プロジェクトを使う架空例です。</p>
+<ol>
+<li>「ショート動画 編集」「リール 動画編集」で募集を探す</li>
+<li>素材尺（受け取る動画の合計の長さ）、完成尺（完成後の長さ）、本数、編集範囲、期限を読む</li>
+<li>自主制作の見本と、担当できる範囲を書いて応募する</li>
+<li>納品物、修正、AI利用、素材の扱い、報酬を合意する</li>
+<li>契約後、依頼主が報酬を先に預ける「仮払い」を確認してから着手する</li>
+<li>台本と撮影素材を受け取る</li>
+<li>初稿MP4を作り、最後まで再生する</li>
+<li>依頼主へ初稿を見せる</li>
+<li>合意した範囲を修正し、完成MP4を納品する</li>
+<li>依頼主が納品物を確認する「検収」のあと、報酬を受け取る</li>
+</ol>
+<p>利用するサービスや依頼形式によって流れは違います。実際の契約条件と公式案内を確認してください。</p>
+<figure class="visual commerce-map"><div class="commerce-phase"><b>受注前</b><div><div class="node">募集</div><div class="node">応募</div><div class="node">条件合意</div><div class="node">仮払い確認</div></div></div><div class="commerce-phase"><b>制作</b><div><div class="node">素材受取</div><div class="node"><b>AI＋キットで編集</b></div><div class="node">初稿</div><div class="node">修正</div></div></div><div class="commerce-phase"><b>納品と支払</b><div><div class="node">MP4納品</div><div class="node">検収</div><div class="node">報酬受取</div></div></div><figcaption>上から順に進みます。AIとキットを使うのは、取引の中の編集工程です。</figcaption></figure><section class="content"><div class="no-print"><h2>実際の完成見本を再生</h2><div class="video-stage"><video controls preload="metadata" poster="assets/display/codex-video-starter-sample-poster.jpg"><source src="assets/codex-video-starter-sample.mp4" type="video/mp4"></video></div><p>約6秒の同梱見本です。字幕・画像・声がどう仕上がるかを確認できます。</p></div><div class="pdf-only pdf-complete"><h2>実際の完成見本</h2><img src="assets/display/codex-video-starter-sample-poster.jpg" alt="完成見本の一場面"><p>約6秒の同梱見本です。字幕・画像・声がどう仕上がるかを確認できます。</p></div></section><h2 id="先に-実際の完成MP4を見る">先に、実際の完成MP4を見る</h2>
+<p>このページには、キットで書き出した実物の見本MP4があります。</p>
+<p>同梱の音声と画像から作った縦動画です。最初から最後まで再生し、次を見てください。</p>
+<ul>
+<li>声が聞こえる</li>
+<li>字幕が画面から切れていない</li>
+<li>声と字幕の内容が合う</li>
+<li>フォカッチャの話で、料理の画像が出る</li>
+<li>最後まで黒い隙間なく再生できる</li>
+</ul>
+<p>練習素材の出典と再利用条件は、キット内の <code>sample/THIRD_PARTY_NOTICES.md</code> に記録しています。</p>
+
+<h3 id="このキットで身につける流れ">このキットで身につける流れ</h3>
+<ol>
+<li>同梱見本を最後まで見る</li>
+<li>配布ZIPを確認して導入する</li>
+<li>同梱素材から見本を作り直す</li>
+<li>実在する字幕を1か所直す</li>
+<li>自分で使ってよい素材へ置き換える</li>
+<li>完成MP4を最後まで確認する</li>
+<li>仕事の見本として担当範囲を説明する</li>
+<li>架空の募集文から条件を読む</li>
+<li>応募、初稿、修正、納品の文面を作る</li>
+</ol>
+<p>キットの導入がゴールではありません。依頼主へ渡す動画を作り、確認し、説明できる状態を目指します。</p>
+<figure class="visual track result-flow"><div class="track-row"><div class="node">練習MP4</div><div class="node">実在字幕を修正</div><div class="node">自分の素材へ交換</div><div class="node">自主制作見本</div><div class="node">募集条件と照合</div><div class="node">応募準備</div></div><figcaption>技術練習を、担当範囲を説明できる仕事の見本へつなげます。</figcaption></figure>
+<h2 id="このキットがする所-人がする所">このキットがする所、人がする所</h2>
+<h3 id="ChatGPT">ChatGPT</h3>
+<ul>
+<li>台本案を出す</li>
+<li>長い台本を短く整理する</li>
+<li>見出しや言い回しの案を出す</li>
+</ul>
+<p>ChatGPTの案は下書きです。内容が正しいか、本人の言葉として使えるかは人が確認します。</p>
+<h3 id="Codexと動画編集キット">Codexと動画編集キット</h3>
+<ul>
+<li>素材を確認する</li>
+<li>音声を文字にする</li>
+<li>字幕の時刻を合わせる</li>
+<li>定型のカット、画像配置、ズームを行う</li>
+<li>MP4を書き出す</li>
+<li>指示された字幕を直し、別名で書き出す</li>
+</ul>
+<h3 id="人">人</h3>
+<ul>
+<li>依頼条件と素材の権利を確認する</li>
+<li>台本の内容を決める</li>
+<li>カット候補を確認する</li>
+<li>声、字幕、画像、音量を最後まで見る</li>
+<li>初稿を依頼主へ説明する</li>
+<li>修正範囲を確認し、納品する</li>
+</ul>
+<figure class="visual role-map"><div><b>ChatGPT</b><span>台本案</span><span>見出し案</span></div><div><b>Codex＋キット</b><span>文字起こし</span><span>字幕・カット</span><span>MP4書き出し</span></div><div><b>人</b><span>条件と権利</span><span>声・字幕・音</span><span>依頼主へ説明</span></div><i>↓</i><strong>完成MP4</strong><em>最後は人が確認</em><figcaption>ChatGPTは案、キットは処理、人は判断と納品を担当します。</figcaption></figure>
+<h2 id="Codexを初めて使う方へ">Codexを初めて使う方へ</h2>
+<p>Codexは、ChatGPTデスクトップアプリのメニューから選べる作業画面です。この特典では、選んだフォルダの素材やキットを読み、自然な文で動画編集を頼むために使います。</p>
+<p><a href="https://learn.chatgpt.com/docs/quickstart">OpenAI公式：ChatGPT／Codexクイックスタート</a></p>
+<p>Macでは、次の順に始めます。</p>
+<ol>
+<li>公式クイックスタートからChatGPTデスクトップアプリを入れる</li>
+<li>ChatGPTアカウントでサインインする</li>
+<li>作業するフォルダを開く</li>
+<li>ChatGPTの選択メニューから<code>Codex</code>を選び、新しいチャットを開く</li>
+</ol>
+<p>この動画キットの実機検証は、下に記載するCodex CLI 0.165.0で行いました。ChatGPTデスクトップアプリはOpenAI公式の開始経路ですが、このキットの導入から書き出しまでを同アプリの画面だけで行う手順は、別に実機確認していません。</p>
+<p>デスクトップアプリの表示、利用可否、上限は、現在の公式案内と自分のアカウント画面で確認してください。現在の契約に含まれるとは断定しません。</p>
+<h2 id="対応している環境">対応している環境</h2>
+<p>導入、2種類の見本作成、自動文字起こし、字幕修正、再書き出しまで実機確認した環境は、Apple Silicon搭載Macです。</p>
+<p>2026年10月29日時点の確認環境です。</p>
+<ul>
+<li>macOS 27.0.1</li>
+<li>Apple Silicon搭載Mac</li>
+<li>Python 3.9.6</li>
+<li>Codex CLI 0.165.0</li>
+<li>FFmpeg 9.0.2（動画を書き出す道具）</li>
+<li>FFprobe 9.0.2（動画の長さや音声の有無を調べる道具）</li>
+</ul>
+<p>Windows、Linux、Intel Macは、この特典では実機確認していません。</p>
+<p>用意するものは、Apple Silicon搭載Mac、Codexを開けるChatGPTアカウントまたは確認済みのCodex CLI、配布ZIP、初回取得時のインターネット接続、3GB以上の空き容量です。</p>
+<p>同梱見本の再生と作り直しだけなら、音声認識モデルの追加取得はありません。自分の音声を初めて文字起こしする時は、専用環境とモデルを取得します。</p>
+<h3 id="Macの種類を確認する">Macの種類を確認する</h3>
+<ol>
+<li>画面左上のAppleメニュー  を開く</li>
+<li>「このMacについて」を選ぶ</li>
+<li>「チップ」または「プロセッサ」を見る</li>
+</ol>
+<p>「チップ」の後ろにチップ名が表示されればApple Siliconです。</p>
+<p>「プロセッサ」にIntelと表示されたMacは、この特典では実機未確認です。</p>
+<figure class="visual environment"><div class="ok"><b>実機確認済み</b><strong>Apple Silicon Mac</strong></div><div><b>実機未確認</b><span>Intel Mac</span><span>Windows</span><span>Linux</span></div><div><b>初回だけ必要</b><span>通信</span><span>空き容量</span></div><figcaption>2026年10月29日時点の確認範囲です。</figcaption></figure>
+<h3 id="ZIPや素材の場所をコピーする">ZIPや素材の場所をコピーする</h3>
+<p>Finderで対象を右クリックし、Optionキーを押したまま「“名前”のパス名をコピー」を選びます。</p>
+<p>コピーした文字を、Codexへ送る文の該当欄へ貼ります。場所を手で入力する必要はありません。</p>
+<h2 id="配布ZIPを確認して導入する">配布ZIPを確認して導入する</h2>
+<p>配布版は <code>v1.0.2</code> です。</p>
+<p>ZIP SHA-256：<code>605612bd781d4bebe28b9900240673427b8597dea9ed02b7b4f6264988aa41ae</code></p>
+<p>SHA-256は、配布ファイル全体を見分ける64文字の値です。利用者が目で読み上げず、Codexへ公式ページの値と手元のZIPを照合してもらいます。</p>
+<p>1文字でも違う場合は実行しません。</p>
+<h3 id="Codexへ送る導入文">Codexへ送る導入文</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">この配布ZIPを、Codex動画編集スターターとして導入してください。
 
 ZIPの場所：
 「ここへ配布ZIPの場所を入れる」
@@ -19,12 +153,40 @@ ZIPの場所：
 作ったMP4は最初から最後まで確認し、字幕が入った場面も見てください。
 
 システム全体の設定や既存ファイルを勝手に変更しないでください。
-既存の同名キットがある場合は、削除や上書きをせず、既存場所と差分、安全な次の手順を報告してください。
 不足がある場合は、不足している物、取得元、通信する内容を先に説明してください。
 
-最後に、配布ファイルの確認結果、導入先、作ったMP4の場所、通信した取得元、未確認の環境を短く報告してください。</div></details><a class="download alt" href="assets/codex-video-starter-v1.0.1.zip" download>配布ZIP v1.0.1を保存</a><a class="download" href="assets/動画編集キット導入ガイド_保存版.pdf" download>保存版PDFを保存</a><details class="verify-info"><summary>配布ファイルの確認情報</summary><p>ファイル名</p><code data-official-zip>codex-video-starter-v1.0.1.zip</code><p>期待するSHA-256（64文字）</p><code data-official-sha>86d5242b55cef329a5bbb2237c4caa3b49f7bfadfd5708f33584f3949d28d019</code><a href="assets/SHA256SUMS.txt" download>SHA256SUMS.txtを保存</a></details><p class="note">同じ内容なら再導入はせず終了します。内容が違う既存版には上書きしません。</p></section>
-<section class="section"><h2>1本目は、同梱見本です。</h2><p>導入文を送ると、アフレコ見本とトーク見本を作ります。最初にアフレコ見本を見ます。</p><ul class="checks"><li>MP4を最初から最後まで再生できる</li><li>声が聞こえる</li><li>字幕が画面から切れていない</li><li>声と字幕の内容が合う</li><li>フォカッチャの話で料理の画像が出る</li></ul><p>見本の作成に成功したことと、字幕の内容が正しいことは別です。人が再生して確認した所までが1本目の完成です。</p></section>
-<section class="section"><h2>実在する字幕を1か所、整えます。</h2><p>目的は、実見本の「食べれる」を「食べられる」へ直し、別名で再書き出すことです。音声認識の誤認が実際に起きたという練習ではありません。</p><div class="before-after"><article class="before"><b>修正前</b><p>食べれる場所でもある</p></article><article class="after"><b>修正後</b><p>食べられる場所でもある</p></article></div><button class="copy" data-copy="repair">字幕修正文をコピー</button><span class="copy-status" role="status"></span><p class="copy-help">コピーできない時は、全文を開いて長押しします。</p><details class="prompt-details"><summary>字幕修正文の全文を見る</summary><div class="prompt" id="repair">このキットで作った動画の字幕を1か所修正してください。
+最後に、配布ファイルの確認結果、導入先、作ったMP4の場所、通信した取得元、未確認の環境を短く報告してください。</code></pre></div>
+<p>既存の同名キットがある場合は上書きしません。Codexが停止したら、元を削除せず、既存場所と今回の内容の違いを確認します。</p>
+<p>キットの音声認識と動画書き出しはMac内で行います。Codexへ送る指示や読ませる情報は、利用しているAIサービスの条件に従います。</p>
+<p>最初は同梱の練習素材を使いましょう。実際の依頼主の素材を使う前に、依頼主のルールとAIサービスのデータ条件を確認します。</p>
+<figure class="visual install-flow"><div><b>ZIPの場所</b><span>v1.0.2</span></div><i>→</i><div><b>公式値と照合</b><span>SHA-256</span></div><i>→</i><div><b>安全確認</b><span>既存キットがある？</span></div><div class="branch"><span><b>ない</b> → 導入 → 見本MP4</span><span><b>ある</b> → 停止して確認</span></div><figcaption>既存キットがある時は上書きせず、そこで止めます。</figcaption></figure>
+<h2 id="同梱見本を作る">同梱見本を作る</h2>
+<p>導入文を送ると、Codexが2種類の見本を作ります。</p>
+<ul>
+<li>アフレコ見本：音声と画像から作る縦動画</li>
+<li>トーク見本：映像と音を同じ区間で切る確認用動画</li>
+</ul>
+<p>最初に見るのは、アフレコ見本です。</p>
+<p>カフェ、朝食、フォカッチャの話に合わせて、字幕と画像が切り替わります。</p>
+<h3 id="完成確認">完成確認</h3>
+<ul>
+<li>MP4を最初から最後まで再生できる</li>
+<li>声が聞こえる</li>
+<li>字幕が画面から切れていない</li>
+<li>声と字幕の内容が合う</li>
+<li>フォカッチャの話で料理の画像が出る</li>
+</ul>
+<p>見本の作成に成功したことと、字幕の内容が正しいことは別です。再生して、人が見た所までが完成です。</p>
+<figure class="visual actual-assets"><div><img src="assets/display/sample-practice-01.png" alt="同梱練習画像1"><img src="assets/display/sample-practice-02.png" alt="同梱練習画像2"><img src="assets/display/sample-practice-03.png" alt="同梱練習画像3"><b>同梱画像3点＋音声</b></div><i>→</i><div><img src="assets/display/codex-video-starter-sample-poster.jpg" alt="実際の完成見本MP4の一場面"><b>実見本MP4</b></div><figcaption>生成イメージではなく、キット同梱素材と実際の出力見本です。</figcaption></figure>
+<h2 id="字幕を1か所直す">字幕を1か所直す</h2>
+<p>実見本に入っている字幕の言い回しを1か所整えます。</p>
+<p>音声認識の誤認が実際に起きた、という練習ではありません。音声は残し、字幕の意味を変えずに直します。</p>
+<h4 id="修正前">修正前</h4>
+<blockquote>食べれる場所でもある</blockquote>
+<h4 id="修正後">修正後</h4>
+<blockquote>食べられる場所でもある</blockquote>
+<h3 id="Codexへ送る字幕修正文">Codexへ送る字幕修正文</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">このキットで作った動画の字幕を1か所修正してください。
 
 作業フォルダ：
 「ここへCodexが報告した作業フォルダの場所を入れる」
@@ -37,8 +199,24 @@ ZIPの場所：
 
 元の設定ファイルとMP4は残してください。
 修正版は別の名前で保存し、入力確認、再書き出し、全体の再生確認、修正箇所の前後確認まで行ってください。
-字幕が画面から切れていないかも見て、修正版MP4の場所を報告してください。</div></details></section>
-<section class="section"><h2>2本目は、自分の素材へ置き換えます。</h2><img class="cover" src="assets/display/own-materials-v1.jpg" alt="台本、音声、背景動画、画像の素材と空の出力先を分けるイメージ"><p class="note">画像はイメージです。フォルダの分け方は下の実描画で確認してください。</p><div class="folders"><article class="folder"><h3>素材フォルダ</h3><ul><li>台本</li><li>音声</li><li>背景動画</li><li>使ってよい画像</li></ul><p>元の保存場所を残し、コピーして使う。</p></article><article class="folder output"><h3>空の出力用作業フォルダ</h3><p>最初は何も入れない。</p><ul><li>字幕</li><li>設定</li><li>下書きMP4</li><li>確認事項</li></ul></article></div><p><b>素材と出力先を同じフォルダにしません。</b> Finderで5か所のパス名をコピーし、全文の5か所へ貼ります。</p><button class="copy" data-copy="own">2本目の全文をコピー</button><span class="copy-status" role="status"></span><p class="copy-help">コピーできない時は、全文を開いて長押しします。</p><details class="prompt-details"><summary>2本目の全文を見る・5か所を差し替える</summary><div class="prompt" id="own">導入した動画編集キットで、私の素材からアフレコの縦動画を1本作ってください。
+字幕が画面から切れていないかも見て、修正版MP4の場所を報告してください。</code></pre></div>
+<p>修正版を開き、直した言葉の前後と、動画全体をもう1度見ます。</p>
+<p>字幕だけ直っていても、声とずれた、画面から切れた、次の字幕と重なった場合は修正が必要です。</p>
+<figure class="visual subtitle-compare"><div><b>修正前の実フレーム</b><img src="assets/display/subtitle-before-actual-v2.png" alt="実見本の字幕「食べれる場所でもある」"><strong>食べれる場所でもある</strong></div><i>→</i><div><b>修正後の実フレーム</b><img src="assets/display/subtitle-after-actual-v2.png" alt="修正版の字幕「食べられる場所でもある」"><strong>食べられる場所でもある</strong></div><ul><li>文字を確認</li><li>前後を確認</li><li>全体を再生</li></ul><figcaption>同じ設定から書き出した約6秒の実MP4を4.5秒で抽出。修正版は別名で保存しています。</figcaption></figure>
+<h2 id="自分の素材で2本目を作る">自分の素材で2本目を作る</h2>
+<p>次は、自分で使う権利がある素材からアフレコ動画を作ります。</p>
+<p>練習で自分の素材を使う目的は、仕事の流れを覚え、自主制作の見本を用意することです。依頼主の実績に見せず、公開できる素材だけを使います。</p>
+<h3 id="素材フォルダ">素材フォルダ</h3>
+<ul>
+<li>自分で使ってよい短い台本</li>
+<li>自分の音声</li>
+<li>背景に使う短い動画</li>
+<li>話の内容に合う画像</li>
+</ul>
+<p>元の保存場所は残し、素材を「素材フォルダ」へコピーします。</p>
+<p>それとは別に、何も入っていない「出力用作業フォルダ」を作ります。素材と出力先を同じフォルダにしません。</p>
+<h3 id="Codexへ送る文">Codexへ送る文</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">導入した動画編集キットで、私の素材からアフレコの縦動画を1本作ってください。
 
 出力用作業フォルダ：
 「ここへ素材とは別に作った、空の出力用作業フォルダの場所を入れる」
@@ -64,11 +242,198 @@ ZIPの場所：
 字幕切れ、声とのずれ、画像の意味、黒い隙間、音の有無を見て、確認が必要な字幕を報告してください。
 
 投稿、公開、外部サービスへの登録はしないでください。
-完成したMP4と、確認事項の場所を報告してください。</div></details></section>
-<section class="section"><h2>完成チェック</h2><ul class="checks"><li>同梱見本を最初から最後まで見た</li><li>字幕を1か所直し、前後と全体を見直した</li><li>素材フォルダと空の出力用作業フォルダを分けた</li><li>元の素材を残した</li><li>自分の素材からMP4を書き出した</li><li>字幕切れ、声とのずれ、画像の意味、黒い隙間、音を確認した</li><li>素材の権利と、公開してよい内容かを確認した</li></ul><h3>作品として見せる時</h3><div class="prompt">制作物：縦型のアフレコ動画
+完成したMP4と、確認事項の場所を報告してください。</code></pre></div>
+<figure class="visual folder-map"><div><b>素材フォルダ</b><code>台本</code><code>音声</code><code>背景動画</code><code>画像</code></div><i>→</i><div><b>空の出力フォルダ</b><code>字幕</code><code>設定</code><code>初稿MP4</code><strong>人が確認</strong><code>修正版MP4</code></div><figcaption>元素材は残し、初稿と修正版を別名で保存します。</figcaption></figure>
+<h3 id="トーク動画を作る場合">トーク動画を作る場合</h3>
+<p>話している人物が映る素材では、映像と音を同じ区間で切ります。</p>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">導入した動画編集キットで、私のトーク動画を編集してください。
+
+出力用作業フォルダ：
+「ここへ素材とは別に作った、空の出力用作業フォルダの場所を入れる」
+
+話している動画：
+「ここへ動画ファイルの場所を入れる」
+
+元の動画は変更しないでください。
+言い直しと長い無音は、勝手に削除せず候補として先に出してください。
+削除する区間が決まったら、映像と音を同じ区間で切ってください。
+字幕を入れ、話者の顔や口へ重ならないか確認し、MP4を書き出してください。
+
+書き出したら、口と声のずれ、字幕切れ、音の有無を最初から最後まで確認してください。
+投稿や公開はせず、完成したMP4と確認事項の場所を報告してください。</code></pre></div>
+<p>同梱のトーク見本は、映像と音の同区間カットを確かめる自作テスト信号です。実在人物の口と声の同期は、自分の素材で別に確認します。</p>
+<h2 id="完成MP4を-仕事の見本にする">完成MP4を、仕事の見本にする</h2>
+<p>動画だけを置くより、担当範囲と確認内容を一緒に見せます。</p>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">制作物：縦型のアフレコ動画
+位置づけ：自主制作の架空見本
 担当：台本確認、音声収録、素材選定、字幕確認、最終確認
 キットで行った所：文字起こし、時刻付き字幕、定型編集、MP4書き出し
 修正した所：字幕の言い回しを1か所調整
-素材：自作、または利用条件を確認した素材</div><p>受注を保証する記載ではありません。素材条件で公開できない場合は、仕事の見本として公開しません。</p></section>
-<section class="section"><h2>付録：安全と対応範囲</h2><p>ZIP全体を公式固定配布元の情報と照合し、一致した場合だけ危険なパス、欠落、衝突を確認して導入します。音声認識と編集はMac内です。不足する道具やモデルを初回取得する場合は通信します。</p><p><b>対応：</b>縦動画のアフレコ／トーク、時刻付き字幕、確認済み字幕、同区間カット、画像と短い動画の挿入、定型ズーム、MP4書き出し。</p><p><b>対象外：</b>高度な顔追跡、複数話者の高度編集、HDR色管理、本格的なノイズ除去、音楽や効果音の権利判断、受注・契約・料金判断、投稿・公開・納品の自動実行。</p></section>
-<footer class="footer"><a class="download" href="https://yuuyann0318.github.io/ai-fukugyo-bonus-hub/">5特典一覧へ戻る</a></footer></main><script src="assets/install-prompt.js"></script><script>async function copyPrompt(b){const target=document.getElementById(b.dataset.copy);const text=target.textContent;const status=b.nextElementSibling;try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(text);b.textContent='コピーしました';status.textContent='全文をコピーしました。'}catch(error){const details=target.closest('details');if(details)details.open=true;const range=document.createRange();range.selectNodeContents(target);const selection=getSelection();selection.removeAllRanges();selection.addRange(range);target.scrollIntoView({block:'center'});b.textContent='全文を表示しました';status.textContent='自動コピーできませんでした。選択した全文を長押しし、「コピー」を選んでください。'}}document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyPrompt(b));</script></body></html>
+確認した所：字幕切れ、声とのずれ、画像の意味、黒い隙間、音
+素材：自作、または利用条件を確認した素材</code></pre></div>
+<p>素材の利用条件で公開できない場合は、見本として公開しません。</p>
+<figure class="visual visual-scene completion-card"><img src="assets/display/client-review-v2.png" alt="動画編集者とカフェ店主が初稿字幕を確認し、完成動画をスマートフォンで確認する場面"><div class="completion-info"><b>完成MP4</b><span>担当：カット・字幕・音量</span><span>修正：字幕1か所</span><span>素材：利用条件を確認</span></div><figcaption>担当範囲と修正内容を添えて、完成動画を見本として説明します。画像はイメージです</figcaption></figure>
+<h2 id="仕事を探して-条件を読む">仕事を探して、条件を読む</h2>
+<h3 id="検索する言葉">検索する言葉</h3>
+<ul>
+<li>ショート動画 編集</li>
+<li>リール 動画編集</li>
+<li>縦動画 字幕 編集</li>
+<li>YouTube Shorts 編集</li>
+</ul>
+<p>募集の表示価格は個別条件です。相場や、初心者が受注できる金額の証明には使いません。</p>
+<h3 id="架空の募集例">架空の募集例</h3>
+<blockquote>30〜60秒の縦動画を1本編集する方を募集します。撮影済み素材と台本を支給します。不要部分のカット、1行字幕、音量調整をお願いします。BGMと投稿代行は含みません。初稿は素材受取から3日後、修正は1回。納品はMP4。AIや文字起こしツールを使う場合は応募時に知らせてください。</blockquote>
+<p>これは練習用の架空例です。</p>
+<p>募集から取り出す項目は、次の12点です。</p>
+<div class="tablewrap"><table><thead><tr><th>項目</th><th>この募集の内容</th></tr></thead><tbody>
+<tr><td>動画の本数</td><td>1本</td></tr>
+<tr><td>完成尺</td><td>30〜60秒</td></tr>
+<tr><td>画面</td><td>縦</td></tr>
+<tr><td>材料</td><td>撮影済み素材、台本</td></tr>
+<tr><td>カット</td><td>不要部分</td></tr>
+<tr><td>字幕</td><td>1行字幕</td></tr>
+<tr><td>音</td><td>音量調整</td></tr>
+<tr><td>対象外</td><td>BGM、投稿代行</td></tr>
+<tr><td>初稿</td><td>素材受取から3日後</td></tr>
+<tr><td>修正</td><td>1回</td></tr>
+<tr><td>納品</td><td>MP4</td></tr>
+<tr><td>AI条件</td><td>応募時に知らせる</td></tr>
+</tbody></table></div>
+<p>このキットで、定型カット、1行字幕、音量確認、MP4書き出しは練習できます。</p>
+<p>ただし、実際の素材で30〜60秒へ収められるか、依頼主が求める編集の雰囲気に合うかは、素材と参考動画を見て判断します。</p>
+<h3 id="応募文の架空例">応募文の架空例</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">はじめまして。30〜60秒の縦動画編集に応募します。
+
+自主制作の架空見本として、カット、1行字幕、音量確認を行った縦型MP4があります。
+
+撮影済み素材と台本を確認し、初稿提出前に字幕、音、黒い隙間を最初から最後まで再生します。AIとローカルの編集キットを使うため、使用可否と素材の扱いを着手前に確認します。
+
+初稿3日後、修正1回、MP4納品を確認しました。
+質問は、元動画の合計尺と、参考動画の有無です。</code></pre></div>
+<p>経験や実績を盛らず、自主制作の架空見本と書きます。送信前に、自分が本当に対応できる条件かを確認します。</p>
+<h2 id="条件を合意する">条件を合意する</h2>
+<p>着手前に、次を文章で残します。</p>
+<ul>
+<li>元動画の本数と合計尺</li>
+<li>完成動画の本数、長さ、縦横</li>
+<li>カット、字幕、BGM、効果音、画像、色の範囲</li>
+<li>参考動画と、似せてよい範囲</li>
+<li>初稿と最終納品の期限</li>
+<li>修正回数と、素材追加・台本変更の扱い</li>
+<li>納品形式、解像度、ファイル名</li>
+<li>AI利用と、素材を渡せる範囲</li>
+<li>報酬、手数料、支払条件</li>
+</ul>
+<p>見積もりは、完成尺だけで決まりません。元動画の長さ、字幕量、画像やBGM、修正、期限でも作業量が変わります。この特典では平均相場を断定しません。</p>
+<figure class="visual condition-sheet"><b>応募前に確認する条件</b><div><span>素材尺<br><small>受け取る動画の長さ</small></span><span>完成尺<br><small>完成後の長さ</small></span><span>字幕<br><small>量・書体</small></span><span>素材<br><small>画像・BGM</small></span><span>修正<br><small>回数・範囲</small></span><span>期限<br><small>初稿・納品</small></span></div><i>↓</i><strong>作業範囲と見積もり</strong><figcaption>完成尺だけで決めず、6条件をそろえて確認します。</figcaption></figure>
+<h2 id="初稿を出し-修正する">初稿を出し、修正する</h2>
+<p>ここからの30〜60秒動画は、仕事の流れを読むための架空例です。先に見た実見本は約6秒で、実測は5.87秒です。実見本の字幕修正と、下の架空案件にある<code>00:12</code>の修正文は、別の動画として読んでください。</p>
+<h3 id="初稿を渡す文">初稿を渡す文</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">縦動画1本の初稿を共有します。
+
+ファイル名：cafe_reel_v01.mp4
+長さ：完成ファイルをご確認ください
+対応：不要部分のカット、1行字幕、音量調整
+対象外：BGM、投稿代行
+
+最初から最後まで再生し、字幕切れ、声とのずれ、黒い隙間、音の有無を確認しました。
+
+合意した修正範囲で、修正箇所と希望をご連絡ください。</code></pre></div>
+<p>長さは、実ファイルを測った値だけを書きます。原稿段階で架空の秒数を確定しません。</p>
+<h3 id="修正を受ける文">修正を受ける文</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">修正内容を確認しました。
+
+対象：00:12付近の字幕
+変更前：営業時間は10時から
+変更後：営業時間は10時からです
+
+この1か所を修正し、別名のMP4へ書き出します。
+修正箇所の前後と、動画全体を再確認して共有します。</code></pre></div>
+<p>依頼主から届いた修正は、時刻、対象、変更前、変更後へ分けます。台本全体の変更や素材追加は、合意した修正範囲に含むか確認します。</p>
+<h2 id="納品して-検収を待つ">納品して、検収を待つ</h2>
+<h3 id="納品文">納品文</h3>
+<div class="codebox"><button class="copy" type="button">コピー</button><pre><code data-lang="text">修正内容を反映し、完成MP4を納品します。
+
+納品物：cafe_reel_final.mp4
+対応：不要部分のカット、1行字幕、音量調整
+修正：00:12付近の字幕を1か所変更
+
+修正箇所の前後と、動画全体を再生しました。
+字幕切れ、声とのずれ、黒い隙間、音の有無を確認済みです。
+
+ファイルをご確認ください。</code></pre></div>
+<p>納品後は、依頼主の検収を待ちます。修正が来たら契約範囲を確認します。検収後に、利用サービスの流れに沿って報酬を受け取ります。</p>
+<p>投稿代行が契約に入っていない場合、依頼主のSNSへ勝手に投稿しません。</p>
+<h2 id="完成チェック">完成チェック</h2>
+<h3 id="練習">練習</h3>
+<ul>
+<li>実見本MP4を最後まで見た</li>
+<li>配布ZIPと公式ページの値を照合して導入した</li>
+<li>同梱素材から見本を作った</li>
+<li>「食べれる場所でもある」を「食べられる場所でもある」へ直した</li>
+<li>修正版を別名で残した</li>
+<li>修正箇所の前後と全体を見直した</li>
+<li>素材フォルダと空の出力フォルダを分けた</li>
+<li>自分で使える素材からMP4を書き出した</li>
+<li>字幕、声、画像、黒い隙間、音を確認した</li>
+</ul>
+<h3 id="仕事の準備">仕事の準備</h3>
+<ul>
+<li>自主制作の架空見本と担当範囲を書ける</li>
+<li>募集文から12項目を取り出せる</li>
+<li>キットで対応できる範囲と、別確認が必要な範囲を分けられる</li>
+<li>応募文へ経験を盛っていない</li>
+<li>着手前の条件を文章で確認できる</li>
+<li>初稿、修正、納品の文面を作れる</li>
+<li>検収後に報酬を受け取る流れを説明できる</li>
+</ul>
+<h2 id="付録-キットの範囲">付録：キットの範囲</h2>
+<h3 id="対応する編集">対応する編集</h3>
+<ul>
+<li>縦動画のアフレコとトーク</li>
+<li>音声から時刻つき字幕の下書き</li>
+<li>確認済み字幕の取り込み</li>
+<li>映像と音の同区間カット</li>
+<li>1行字幕と最後の2行字幕</li>
+<li>画像と短い動画の挿入</li>
+<li>主動画への定型ズーム</li>
+<li>MP4書き出し</li>
+</ul>
+<h3 id="別の方法や確認が必要な編集">別の方法や確認が必要な編集</h3>
+<ul>
+<li>顔を追い続ける編集</li>
+<li>複数話者の高度な編集</li>
+<li>HDRの色管理</li>
+<li>本格的なノイズ除去、残響除去</li>
+<li>音楽や効果音の利用許諾判断</li>
+<li>依頼主との契約、料金判断</li>
+<li>投稿、公開、納品の自動実行</li>
+</ul>
+<h3 id="素材を守る">素材を守る</h3>
+<p>元の動画、音声、画像を残し、作業用フォルダへコピーします。</p>
+<p>初稿と修正版は別名で保存します。自分で使う権利がない画像、音楽、動画、他人の声は使いません。</p>
+<p>実際の顧客素材をCodexへ読ませる前に、依頼主のルールとAIサービスの条件を確認します。</p>
+<h2 id="今日の行動">今日の行動</h2>
+<p>実見本MP4を、最初から最後まで1回再生してください。</p>
+<p>再生しながら、次の3点を見ます。</p>
+<ul>
+<li>声が聞こえるか</li>
+<li>1行字幕が画面から切れず、声の内容と合っているか</li>
+<li>話の内容に合わせて画像が切り替わるか</li>
+</ul>
+<p>今日はここまでです。</p>
+<h2 id="次回以降の学習順">次回以降の学習順</h2>
+<ol>
+<li>自分のMacが対応環境か確認する</li>
+<li>配布ZIPを照合して導入する</li>
+<li>同梱見本を作り直す</li>
+<li>実字幕を1か所直し、別名で保存する</li>
+<li>自分で使える素材から短い見本を作る</li>
+<li>架空の募集例から12項目を取り出す</li>
+<li>応募、条件合意、初稿、修正、納品を順番に練習する</li>
+</ol>
+<p>同梱見本を作り直した時、字幕を直した時、自分の素材で見本を作った時は、完成MP4を再生してから次へ進みます。</p></section></main><script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{let t=b.parentElement.querySelector('code').innerText;await navigator.clipboard.writeText(t);b.textContent='コピーしました';setTimeout(()=>b.textContent='コピー',1600)}));
+if(new URLSearchParams(location.search).has('pdf'))document.querySelectorAll('details').forEach(d=>d.open=true);
+</script></body></html>
