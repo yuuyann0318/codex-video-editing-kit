@@ -1,9 +1,0 @@
-@media print{
-  .hero{padding:2mm 0!important}
-  .cover{max-height:50mm!important}
-  .notice{margin:2mm 0!important;padding:3mm!important}
-  .hash-check{margin:2mm 0!important;padding:3mm!important}
-  #install .action-head{padding:4mm!important}
-  #install .prompt{line-height:1.35!important;padding:4mm!important;margin:3mm 5mm!important}
-  .copy-help{font-size:10pt!important;line-height:1.3!important;margin:0 5mm 3mm!important}
-}
